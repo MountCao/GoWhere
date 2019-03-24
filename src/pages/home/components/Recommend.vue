@@ -2,7 +2,7 @@
     <div>
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <img class="item-img" :src="item.imgUrl">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -17,26 +17,9 @@
 <script>
 export default {
     name: 'HomeRecommend',
-    data() {
-        return{
-            recommendList: [{
-                id: '0001',
-                imgUrl: '//pic4.40017.cn/scenery/destination/2016/12/28/19/OGwDKH_180x160_00.jpg',
-                title: '芜湖方特梦幻王国',
-                desc: '精彩、刺激、探险、尖叫欢乐无极限'
-            },{
-                id: '0002',
-                imgUrl: '//pic4.40017.cn/scenery/destination/2016/12/28/19/OGwDKH_180x160_00.jpg',
-                title: '芜湖方特梦幻王国',
-                desc: '精彩、刺激、探险、尖叫欢乐无极限'
-            },{
-                id: '0003',
-                imgUrl: '//pic4.40017.cn/scenery/destination/2016/12/28/19/OGwDKH_180x160_00.jpg',
-                title: '芜湖方特梦幻王国',
-                desc: '精彩、刺激、探险、尖叫欢乐无极限'
-            }]
-        }
-    },
+    props:{
+        list: Array
+    }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption">
-            <swiper-slide v-for="item of swiperList" :key="item.id">
+        <swiper :options="swiperOption" v-if="showSwiper">
+            <swiper-slide v-for="item of list" :key="item.id">
                 <img class="swiper-img" :src="item.imgUrl"/>
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
@@ -12,26 +12,21 @@
 <script>
 export default {
     name: 'HomeSwiper',
+    props: {
+        list: Array
+    },
     data() {
         return {
             swiperOption:{
                 pagination: '.swiper-pagination',
                 // 循环轮播
                 loop: true
-            },
-            swiperList:[{
-                id: '0001',
-                imgUrl: '//img3.mukewang.com/szimg/5c9081eb080f137c09000300.jpg',
-            },{
-                id: '0002',
-                imgUrl: '//img3.mukewang.com/szimg/5c8fb01f08d2d6cd09000300.jpg',
-            },{
-                id: '0003',
-                imgUrl: '//img3.mukewang.com/szimg/5c9081eb080f137c09000300.jpg',
-            },{                
-                id: '0004',
-                imgUrl: '//img2.mukewang.com/szimg/5c622774097d181318000600.jpg'
-            }]
+            }
+        }
+    },
+    computed: {
+        showSwiper(){
+            return this.list.length
         }
     },
 }

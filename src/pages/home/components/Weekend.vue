@@ -2,7 +2,7 @@
     <div>
         <div class="title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl">
                 </div>
@@ -18,40 +18,22 @@
 <script>
 export default {
     name: 'HomeWeekend',
-    data() {
-        return{
-            recommendList: [{
-                id: '0001',
-                imgUrl: '//pic.c-ctrip.com/flight/fuzzy/SYX/582.jpg',
-                title: '芜湖方特梦幻王国',
-                desc: '精彩、刺激、探险、尖叫欢乐无极限'
-            },{
-                id: '0002',
-                imgUrl: '//pic.c-ctrip.com/flight/fuzzy/SYX/582.jpg',
-                title: '芜湖方特梦幻王国',
-                desc: '精彩、刺激、探险、尖叫欢乐无极限'
-            },{
-                id: '0003',
-                imgUrl: '//pic.c-ctrip.com/flight/fuzzy/SYX/582.jpg',
-                title: '芜湖方特梦幻王国',
-                desc: '精彩、刺激、探险、尖叫欢乐无极限'
-            }]
-        }
-    },
+    props: {
+        list: Array
+    }
 }
 </script>
 
 <style lang="stylus" scoped>
     @import '~styles/mixins.styl'
     .title
-        margin-top: .2rem
         line-height: .8rem
         background: #eee
         index-indent: .2rem
     .item-img-wrapper
         overflow: hidden
         height: 0
-        padding-bottom: 33.9%
+        padding-bottom: 37.09%
         .item-img
             width: 100%
     .item-info
