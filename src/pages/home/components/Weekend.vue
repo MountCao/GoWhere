@@ -55,7 +55,7 @@ export default {
         .item-img
             width: 100%
     .item-info
-        padding: .1rem
+        padding: .2rem
         .item-title
             line-height: .54rem
             font-size: .32rem
